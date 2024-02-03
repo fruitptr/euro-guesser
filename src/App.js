@@ -2,7 +2,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps"
 import "./App.css"
 
 const geoUrl =
-  "assets/eu.topojson"
+  "https://raw.githubusercontent.com/fruitptr/country-guesser/main/src/assets/eu.topojson"
 
 function App() {
   return (
