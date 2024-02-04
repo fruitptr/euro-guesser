@@ -5,7 +5,7 @@ const geoUrl =
 
 
   
-function Map() {
+function Map({correctCountriesGussed}) {
   return (
     <ComposableMap 
       projection="geoMercator"
@@ -16,7 +16,7 @@ function Map() {
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies.map((geo) => {
-            const isRussia = geo.properties && geo.properties.name == "Russia";
+            const isCorrectGuess = correctCountriesGussed.includes(geo.properties.name);
 
             return (
               <Geography
@@ -24,7 +24,7 @@ function Map() {
                 geography={geo}
                 style={{
                   default: {
-                    fill: isRussia ? "#94AD99" : "#E0E0E0",
+                    fill: isCorrectGuess ? "#94AD99" : "#E0E0E0",
                     stroke: "#FFFFFF",
                   },
                   hover: { fill: "#94AD99", stroke: "#FFFFFF" },
@@ -34,6 +34,7 @@ function Map() {
           })
         }
       </Geographies>
+
 
     </ComposableMap>
   );

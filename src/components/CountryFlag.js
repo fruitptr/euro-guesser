@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Box, Heading, Button } from '@chakra-ui/react';
-import countries from '../assets/countries';
 
 
-const CountryFlag = () => {
-  
+const CountryFlag = ({countryFlag}) => {
 
   return (
     <Box
@@ -22,7 +20,7 @@ const CountryFlag = () => {
       </Box>
       <Box display='flex' justifyContent='center'>
         <Button width='100%' paddingX={7} borderRadius='full' bgColor='#FFD567' fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Hint</Button>
-        <img id='flag' src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/is.svg" alt="Iceland"></img>
+        <img id='flag' src={countryFlag} alt="Country Flag"></img>
         <Button width='100%' paddingX={7} borderRadius='full' bgColor='#94AD99' color="#FFFFFF" fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Skip</Button>
       </Box>
       <Box>
