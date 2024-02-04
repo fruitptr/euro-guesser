@@ -11,7 +11,7 @@ const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemaining
 
     if (guessSoFar.toLowerCase() === countryToGuess.toLowerCase()) {
       input.value = '';
-      setCorrectCountriesGuessed((prev) => [...prev, countryToGuess]);
+      setCorrectCountriesGuessed((prev) => [...prev, countryCode]);
       setRemainingCountries((prev) => prev.filter((country) => country !== countryCode));
       toast.closeAll();
       toast({
@@ -64,7 +64,7 @@ const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemaining
           <InputRightElement width="4.5rem">
             <Button
               borderRadius="full"
-              colorScheme="brand"
+              colorScheme="blue"
               fontFamily='"cg",Courier,system-ui,sans-serif'
               onClick={handleGuess}
             >
@@ -74,8 +74,9 @@ const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemaining
         </InputGroup>
         <Button
           borderRadius="full"
-          colorScheme="brand"
+          colorScheme="red"
           fontFamily='"cg",Courier,system-ui,sans-serif'
+          marginLeft={2}
           onClick={handleGameEnded}
         >
           Give Up
