@@ -18,7 +18,7 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box position="relative">
+      <Box position="relative" >
         <CountryFlag />
         <Map />
         <CountryInput />
