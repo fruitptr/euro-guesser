@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Heading, Button } from '@chakra-ui/react';
-import Flag from 'react-world-flags'
 
 const CountryFlag = () => {
 
@@ -19,9 +18,9 @@ const CountryFlag = () => {
         </Heading>
       </Box>
       <Box display='flex' justifyContent='center'>
-        <Button borderRadius='full' bgColor='#FFD567' fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Hint</Button>
-        <Flag code="nor" height="16" />
-        <Button width='50px' borderRadius='full' bgColor='#94AD99' color="#FFFFFF" fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Skip</Button>
+        <Button width='100%' paddingX={7} borderRadius='full' bgColor='#FFD567' fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Hint</Button>
+        <img id='flag' src="https://catamphetamine.gitlab.io/country-flag-icons/3x2/IS.svg" alt="Iceland"></img>
+        <Button width='100%' paddingX={7} borderRadius='full' bgColor='#94AD99' color="#FFFFFF" fontFamily='"cg",Courier,system-ui,sans-serif' margin={4}>Skip</Button>
       </Box>
       <Box>
         <Heading as='h1' size='4xl' noOfLines={1}>
