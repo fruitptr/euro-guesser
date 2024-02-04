@@ -1,20 +1,29 @@
-import { ComposableMap, Geographies, Geography } from "react-simple-maps"
+import * as React from 'react'
+import { ChakraProvider, Box, extendTheme } from '@chakra-ui/react'
 import "./App.css"
+import Map from './components/Map'
+import CountryInput from './components/CountryInput'
+import CountryFlag from './components/CountryFlag'
 
-const geoUrl =
-  "https://raw.githubusercontent.com/fruitptr/country-guesser/main/src/assets/eu.topojson"
+const theme = extendTheme({
+  colors: {
+    brand: {
+      50: "#E0E0E0",
+      100: "#FFFFFF",
+      500: "#94AD99",
+    }
+  }
+});
 
 function App() {
   return (
-    <ComposableMap>
-      <Geographies geography={geoUrl}>
-        {({ geographies }) =>
-          geographies.map((geo) => (
-            <Geography key={geo.rsmKey} geography={geo} />
-          ))
-        }
-      </Geographies>
-    </ComposableMap>
+    <ChakraProvider theme={theme}>
+      <Box position="relative">
+        <CountryFlag />
+        <Map />
+        <CountryInput />
+      </Box>
+    </ChakraProvider>
   );
 }
 
