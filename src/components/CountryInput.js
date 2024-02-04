@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, InputGroup, Box, Button, Icon, InputRightElement, InputLeftElement, Center, useToast } from '@chakra-ui/react';
 import { TbFlag2 } from 'react-icons/tb';
 
-const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemainingCountries, countryCode, setGameEnded, remainingCountries }) => {
+const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemainingCountries, countryCode, setGameEnded, remainingCountries, setUserScore }) => {
   const toast = useToast();
 
   const handleGuess = () => {
@@ -11,6 +11,7 @@ const CountryInput = ({ countryToGuess, setCorrectCountriesGuessed, setRemaining
 
     if (guessSoFar.toLowerCase() === countryToGuess.toLowerCase()) {
       input.value = '';
+      setUserScore((prev) => prev + 1);
       setCorrectCountriesGuessed((prev) => [...prev, countryCode]);
       setRemainingCountries((prev) => prev.filter((country) => country !== countryCode));
       toast.closeAll();

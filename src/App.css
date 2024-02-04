@@ -7,3 +7,9 @@ body {
   width: 80px;
   height: auto;
 }
+
+#background {
+  background-size: cover;
+  background-repeat: repeat;
+  background-blend-mode:overlay;
+}

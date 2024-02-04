@@ -2,12 +2,18 @@ import React from 'react'
 import { Button, Box, Heading, ScaleFade } from '@chakra-ui/react';
 import countries from '../assets/countries';
 
-const GameEnded = ({setGameEnded, setCorrectCountriesGuessed, setRemainingCountries, userScore}) => {
+const GameEnded = ({setGameEnded, setCorrectCountriesGuessed, setRemainingCountries, setUserScore, userScore, totalCountries}) => {
     const handleGameEnded = () => {
+        setUserScore(0);
         setRemainingCountries(Object.keys(countries));
         setCorrectCountriesGuessed([]);
         setGameEnded(false);
     };
+
+    const formatScore = () => {
+        return `${userScore}/${totalCountries}`;
+      };
+
   return (
     <ScaleFade initialScale={0.9} in={true}>
         <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' height='100vh' bg='#e8f1e7'>
@@ -17,7 +23,7 @@ const GameEnded = ({setGameEnded, setCorrectCountriesGuessed, setRemainingCountr
                         Score
                     </Heading>
                     <Heading as='h2' size='xl' marginBottom='1rem' color='white' fontFamily='"cg",Courier,system-ui,sans-serif'>
-                        24/45
+                        {formatScore()}
                     </Heading>
                 </Box>
             </Box>
