@@ -5,7 +5,7 @@ const geoUrl =
 
 
   
-function Map({correctCountriesGussed}) {
+function Map({correctCountriesGuessed}) {
   return (
     <ComposableMap 
       projection="geoMercator"
@@ -16,7 +16,7 @@ function Map({correctCountriesGussed}) {
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies.map((geo) => {
-            const isCorrectGuess = correctCountriesGussed.includes(geo.properties.name);
+            const isCorrectGuess = correctCountriesGuessed.includes(geo.properties.name);
 
             return (
               <Geography
