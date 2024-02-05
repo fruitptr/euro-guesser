@@ -16,6 +16,7 @@ function Game() {
   const [correctCountriesGuessed, setCorrectCountriesGuessed] = React.useState([]);
   const [skipFlag, setSkipFlag] = React.useState(false);
   const [userScore, setUserScore] = React.useState(0);
+  
 
   const handleNextFlag = (skipFlag) => {
     if (skipFlag === false) {
@@ -43,7 +44,7 @@ function Game() {
           <GameEnded setGameEnded={setGameEnded} setCorrectCountriesGuessed={setCorrectCountriesGuessed} setRemainingCountries={setRemainingCountries} setUserScore={setUserScore} userScore={userScore} totalCountries={Object.keys(countries).length}/>
         ) : (
           <>
-            <CountryFlag countryFlag={countryFlag} setSkipFlag={setSkipFlag} setGameEnded={setGameEnded} userScore={userScore} totalCountries={Object.keys(countries).length}/>
+            <CountryFlag countryFlag={countryFlag} setSkipFlag={setSkipFlag} setGameEnded={setGameEnded} userScore={userScore} totalCountries={Object.keys(countries).length} countryToGuess={countryToGuess}/>
             <Map correctCountriesGuessed={correctCountriesGuessed} />
             <CountryInput
               countryToGuess={countryToGuess}

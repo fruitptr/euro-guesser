@@ -26,14 +26,17 @@ function Map({correctCountriesGuessed}) {
                   default: {
                     fill: isCorrectGuess ? "#94AD99" : "#E0E0E0",
                     stroke: "#FFFFFF",
+                    outline: "none"
                   },
                   hover: {
                     fill: isCorrectGuess ? "#94AD99" : "#E0E0E0",
                     stroke: "#FFFFFF",
+                    outline: "none"
                   },
                   pressed: {
                     fill: isCorrectGuess ? "#94AD99" : "#E0E0E0",
                     stroke: "#FFFFFF",
+                    outline: "none"
                   },
                 }}
               />

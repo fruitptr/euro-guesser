@@ -11,8 +11,13 @@ const GameEnded = ({setGameEnded, setCorrectCountriesGuessed, setRemainingCountr
     };
 
     const formatScore = () => {
-        return `${userScore}/${totalCountries}`;
-      };
+        if (userScore < 10) {
+          return `0${userScore}/${totalCountries}`;
+        }
+        else {
+          return `${userScore}/${totalCountries}`;
+        }
+      }
 
   return (
     <ScaleFade initialScale={0.9} in={true}>
@@ -28,11 +33,11 @@ const GameEnded = ({setGameEnded, setCorrectCountriesGuessed, setRemainingCountr
                 </Box>
             </Box>
             <Box>
-                <Heading as='h1' size='4xl' noOfLines={1} marginBottom='1rem'>
+                <Heading as='h1' size='4xl' noOfLines={1} marginBottom='1rem' fontFamily='"cg",Courier,system-ui,sans-serif'>
                     An impressive effort!
                 </Heading>
                 <Box display='flex' justifyContent='center' flexDirection='row'>
-                    <Heading as='h2' size='xl'>
+                    <Heading as='h2' size='xl' fontFamily='"cg",Courier,system-ui,sans-serif'>
                         Wanna try again?
                     </Heading>
                     <Button bgColor='#94AD99' colorScheme='green' marginLeft='1rem' onClick={handleGameEnded}>Play Again</Button>

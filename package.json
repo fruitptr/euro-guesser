@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.7",
     "country-flag-icons": "^1.5.9",
     "d3-scale": "^4.0.2",
     "flag-icons": "^7.1.0",
